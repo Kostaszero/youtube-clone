@@ -1,0 +1,23 @@
+<div class="videoGrid">
+    <div class="videos" *ngFor="let item of videoList; let i=index">
+        <div style="position: relative; margin: 0; padding: 0;">
+            <div class="time-stamp">{{item.timeStamp}}</div>
+            <img class="thumbNail" [src]="item.thumbnailUrl" alt="yt-thumbnail">
+            <!-- https://picsum.photos/400/250?random={{i}} -->
+        </div> 
+        <div class="content-info">
+            <div class="profile">
+                <img style="border-radius: 50%;" 
+                [src]="item.profileUrl" alt="dp">
+            </div>
+            <div class="video-content">
+                <p class="video-title">{{item.videoTitle}}</p>
+                <p class="channel-name">{{item.channelName}}</p>
+                <div style="display: flex;" class="meta-data">
+                    <p class="views-count">{{item.viewsCount}}</p>
+                    <p class="video-posted">{{item.videoPosted}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+:root{
+    --dark-theme-bg-color: #0f0f0f;
+    --white-theme-bg-color: #aaa;
+    --primary-color: #f1f1f1;
+    --app-drawer-bg-color: #0f0f0f;
+    font-size: 10px;
+    --nav-tab-bar-width: 235px;
+    --primary-font: "Roboto","Arial",sans-serif;
+    --primary-outline-color: rgba(255, 255, 255, 0.2);
+    --sec-outline-color: rgba(255, 255, 255, 0.102);
+    scrollbar-color: var(--white-theme-bg-color) transparent;
+    --secondary-bg: hsla(0, 0%, 100%, 0.08);
+    --border-color: hsl(0, 0%, 18.82%);
+}
+*{
+    -webkit-tap-highlight-color: transparent;
+}
+body, html{
+    background-color: var(--dark-theme-bg-color);
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.pointer{
+    cursor: pointer;
+}
+svg{
+    fill: var(--primary-color);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

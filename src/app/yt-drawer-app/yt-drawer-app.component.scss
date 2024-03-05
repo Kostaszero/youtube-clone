@@ -1,0 +1,122 @@
+.mini-nav-bar.nav-container, .overlay .nav-container {
+    overflow: hidden scroll;
+    height: 90%;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+    width: var(--nav-tab-bar-width, 25rem);
+    background-color: var(--app-drawer-bg-color);
+    transition-property: transform;    
+    padding-top: 1rem;
+}
+
+.nav-container:hover {
+    scrollbar-color: var(--white-theme-bg-color) transparent !important;
+}
+
+.break {
+    border-top: 1px solid var(--primary-outline-color);
+    margin-top: 12px;
+    padding-top: 12px;
+    width: 95%;
+}
+
+.nav-tab-content {
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    height: 40px;
+    width: calc(100% - 48px);
+}
+.nav-tab-content:hover {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.102);
+    border-color: transparent;
+}
+.nav-tab-content:first-child {
+    border-radius: 10px;
+    background-color: var(--sec-outline-color);
+    border-color: transparent;
+}
+
+.nav-tab-content:first-child:hover {
+    border-radius: 10px;
+    background-color: var(--primary-outline-color);
+    border-color: transparent;
+}
+.tab-icon {
+    margin-right: 24px;
+}
+
+.tab-text {
+    font-family: "Roboto", "Arial", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: 400;
+    color: var(--primary-color);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+}
+
+.mini-nav-bar.nav-container {
+    width: 80px;
+    padding: 0 4px;
+}
+
+.mini-nav-bar.nav-tab-content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0 14px;
+    width: 64px;
+    cursor: pointer;
+}
+
+.mini-nav-bar.nav-tab-content {
+    .tab-icon {
+    margin: 0;
+    }
+    .tab-text {
+        font-size: 1rem;
+        margin-top: 0;
+        width: 65px;
+        text-align: center;
+    }
+}
+.overlay {
+    display: flex;
+    position: fixed;
+    top: 56px;
+    z-index: 999;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+}
+.hideNav{
+    transform: translate3d(-100%, 0, 0);
+}
+.fade-in {
+    visibility: visible;
+    width: 100%;
+    opacity: 1;
+}
+.draw-over {
+    transform: translate3d(0, 0, 0) !important;
+    height: 100% !important;
+}
+.overlay-flow {
+    // background-color: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 250px);
+}
+$small: 790px;
+@media (max-width: $small) {
+    .mini-nav-bar{
+        display: none !important;
+    }
+    .overlay .nav-container{
+        padding-left: 6px;
+    }
+    
+}

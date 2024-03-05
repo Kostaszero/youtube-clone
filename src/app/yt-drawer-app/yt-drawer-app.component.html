@@ -1,0 +1,41 @@
+<div class="overlay" [class.fade-in]="toggleSideNav || showSideDrawer == 2" 
+[style.transitionDuration]="(showSideDrawer == 0)?'0ms':'200ms'"
+[style.width]="(showSideDrawer == 2)?'100%':'initial'"
+>
+
+    <div class="nav-container" 
+    [class]="{'hideNav':!toggleSideNav, 'draw-over': (showSideDrawer == 2)}"
+    [style.transitionDuration]="(showSideDrawer == 0)?'0ms':'200ms'">
+        <ng-container *ngFor="let item of tab_contents; let idx=index">
+            <div *ngIf="item != 'break'" class="nav-tab-content pointer">
+                <span class="tab-icon">
+                    <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                        style="pointer-events: none; display: block;">
+                        <g>
+                            <path [attr.d]="tab_icons[idx]"></path>
+                        </g>
+                    </svg>
+                </span>
+                <span class="tab-text">{{item}}</span>
+            </div>
+            <div class="break" *ngIf="item == 'break'"></div>
+        </ng-container>
+    </div>
+    <div class="overlay-flow" (click)="hideDrawer()"></div>
+</div>
+<div class="mini-nav-bar nav-container" [style.display]="(!toggleSideNav)?'inline-block':'none'">
+    <ng-container *ngFor="let item of tab_contents; let idx=index">
+        <div *ngIf="item != 'break'" class="mini-nav-bar nav-tab-content">
+            <span class="tab-icon">
+                <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false"
+                    style="pointer-events: none; display: block;">
+                    <g>
+                        <path [attr.d]="tab_icons[idx]"></path>
+                    </g>
+                </svg>
+            </span>
+            <span class="tab-text">{{item}}</span>
+            <div class="break" *ngIf="item == 'break'"></div>
+        </div>
+    </ng-container>
+</div>
